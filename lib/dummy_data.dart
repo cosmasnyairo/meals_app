@@ -125,7 +125,7 @@ const DUMMY_Meals = const [
     categories: [
       'c2',
       'c3',
-    ],
+    ], 
     title: 'Classic Hamburger',
     affordability: Affordability.Pricy,
     complexity: Complexity.Simple,
@@ -191,6 +191,7 @@ const DUMMY_Meals = const [
       'c4',
       'c5',
       'c9',
+      'c6',
       'c10',
     ],
     title: 'Salad with Smoked Salmon',
@@ -257,7 +258,6 @@ const DUMMY_Meals = const [
     id: 'm7',
     categories: [
       'c3',
-      'c1',
       'c2',
     ],
     title: 'Pancakes',
@@ -447,7 +447,7 @@ const DUMMY_Meals = const [
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1yu0pfPg3hyYaEMaWFE_98gIoUzuAxzgyxp94A-gRrqRKR1Ey',
     duration: 30,
     ingredients: [
       '1 cup fresh water',
