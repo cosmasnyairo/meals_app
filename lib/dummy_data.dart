@@ -203,7 +203,7 @@ const DUMMY_Meals = const [
     complexity: Complexity.Simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
-    duration: '15',
+    duration: '240',
     ingredients: [
       'Arugula',
       'Lamb\'s Lettuce',
@@ -232,15 +232,15 @@ const DUMMY_Meals = const [
     categories: [
       'c5',
       'c4',
-          'c6',
+      'c6',
       'c7',
     ],
     title: 'Sukuma Wiki',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDqQXxm2lUMvSnJtDs1pbMaEc7BZqrXBBxzwbU_LrW9UGrvm8G' ,
-    duration: '240',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRFw2bboWP9eNo0S6tBB8iGbDwekVuSeYK-gidaOpGXHkXUH9qz',
+    duration: '5',
     ingredients: [
       '2 Tablespoons oil',
       '1 onion, chopped',
