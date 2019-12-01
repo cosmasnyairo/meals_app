@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,11 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Meals',
+      title: 'Meals App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green
       ),
-      home: MyHomePage(title: 'Meals App'),
+      home: MyHomePage(title: 'Meals'),
     );
   }
 }
@@ -26,17 +27,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
   @override
   Widget build(BuildContext context) {
+    
+    final mediaquery = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
         child: Container(
-          color: Colors.amber,
+          child: Text('Meals App'),
         ),
       ),
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   color: Theme.of(context).primaryColor,
+      //   height: 60,
+      //   backgroundColor: null,
+      //   items: <Widget>[              
+      //     Icon( Icons.menu, size: 30, ),
+      //     Icon(Icons.star, size: 30),
+      //     Icon(Icons.settings, size: 30),
+      //   ],
+      //   animationCurve: Curves.easeIn,
+      //   animationDuration: Duration(milliseconds: 600),
+      // ),
     );
   }
 }
