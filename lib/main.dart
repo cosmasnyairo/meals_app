@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
+
+import './categories_screen.dart';
+import './category_meals_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,49 +13,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Meals App',
       theme: ThemeData(
-        primarySwatch: Colors.green
+        primarySwatch: Colors.brown,
+        canvasColor: Color.fromRGBO(164, 173, 191, 1),
+        fontFamily: 'RobotoCondensed',
+        textTheme: ThemeData.light().textTheme.copyWith(
+            body1: TextStyle(
+              color: Color.fromRGBO(20, 51, 51, 1),
+            ),
+            body2: TextStyle(
+              color: Color.fromRGBO(20, 51, 51, 1),
+            ),
+            title: TextStyle(fontSize: 20, fontFamily: 'Raleway')),
       ),
-      home: MyHomePage(title: 'Meals'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  
-  @override
-  Widget build(BuildContext context) {
-    
-    final mediaquery = MediaQuery.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Container(
-          child: Text('Meals App'),
-        ),
-      ),
-      // bottomNavigationBar: CurvedNavigationBar(
-      //   color: Theme.of(context).primaryColor,
-      //   height: 60,
-      //   backgroundColor: null,
-      //   items: <Widget>[              
-      //     Icon( Icons.menu, size: 30, ),
-      //     Icon(Icons.star, size: 30),
-      //     Icon(Icons.settings, size: 30),
-      //   ],
-      //   animationCurve: Curves.easeIn,
-      //   animationDuration: Duration(milliseconds: 600),
-      // ),
+      home: CategoriesScreen(),
+      routes:  {
+        '/category-meals' : (ctx) => CategoryMealsScreen(),
+      },
     );
   }
 }
