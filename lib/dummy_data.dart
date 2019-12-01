@@ -72,13 +72,13 @@ const DUMMY_Meals = const [
     duration: '20',
     ingredients: ['1 cup milk', '1¼ cups cornmeal', '1 cup water'],
     steps: [
-      'Pour the milk into a mixing bowl. Slowly add ¾ cup of the cornmeal and whisk constantly into a paste.'
-          'Heat the water in a medium saucepan to boiling.'
-          'Using a wooden spoon, stir cornmeal and milk paste mixture into the boiling water. Reduce heat to low.'
-          'Slowly add the remaining ½ cup of cornmeal, stirring constantly. The mixture should be smooth with no lumps.'
-          'Cook for about 3 minutes. When the mixture begins to stick together and pull away from the sides of the pan, remove from heat.'
-          'Pour mixture into a greased serving bowl and allow to cool.'
-          'Serve at room temperature as a side dish to meat and vegetables.'
+      'Pour the milk into a mixing bowl. Slowly add ¾ cup of the cornmeal and whisk constantly into a paste.',
+      'Heat the water in a medium saucepan to boiling.',
+      'Using a wooden spoon, stir cornmeal and milk paste mixture into the boiling water. Reduce heat to low.',
+      'Slowly add the remaining ½ cup of cornmeal, stirring constantly. The mixture should be smooth with no lumps.',
+      'Cook for about 3 minutes. When the mixture begins to stick together and pull away from the sides of the pan, remove from heat.',
+      'Pour mixture into a greased serving bowl and allow to cool.',
+      'Serve at room temperature as a side dish to meat and vegetables.',
     ],
     isGlutenFree: true,
     isVegan: true,
@@ -247,7 +247,7 @@ const DUMMY_Meals = const [
       '1 tomato, chopped',
       'One bunch sukuma (kale or collard greens), chopped',
       '½ cup water',
-      'Salt'
+      'Salt',
     ],
     steps: [
       'Heat oil in a frying pan and add the onions. Sauté about 2 to 4 minutes.',
