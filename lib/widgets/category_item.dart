@@ -7,7 +7,11 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final Color color;
 
-  CategoryItem(this.id, this.title, this.color,);
+  CategoryItem(
+    this.id,
+    this.title,
+    this.color,
+  );
 
   void selectCategory(BuildContext ctx) {
     //goes to the page that has the /
@@ -27,25 +31,24 @@ class CategoryItem extends StatelessWidget {
       splashColor: color,
       borderRadius: BorderRadius.circular(10),
       child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                color.withOpacity(0.5),
-                color, //transparent value of the color
-              ],
-            ),
-            borderRadius: BorderRadius.circular(10),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              color.withOpacity(0.5),
+              color, //transparent value of the color
+            ],
           ),
-          child:
-              Text(
-                title,
-                style: Theme.of(context).textTheme.title,
-              ),
-                
-          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.title,
+        ),
+        alignment: Alignment.bottomLeft,
+      ),
     );
   }
 }
