@@ -1,7 +1,9 @@
 //shows meals under for each category
 import 'package:flutter/material.dart';
+import 'package:meals_app/widgets/meal_item.dart';
 
 import '../dummy_data.dart';
+import '../widgets/meal_item.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
   @override
@@ -9,9 +11,9 @@ class CategoryMealsScreen extends StatelessWidget {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['id']; 
+    final categoryId = routeArgs['id'];
 
-    final categoryMeals=DUMMY_Meals.where((meal){
+    final categoryMeals = DUMMY_Meals.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
 
@@ -21,7 +23,13 @@ class CategoryMealsScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
-          return Text(categoryMeals[index].title);
+          return MealItem(
+            title: categoryMeals[index].title,
+            affordability: categoryMeals[index].affordability,
+            complexity: categoryMeals[index].complexity,
+            imageUrl: categoryMeals[index].imageUrl,
+            duration: categoryMeals[index].duration,
+          );
         },
         itemCount: categoryMeals.length,
       ),

@@ -5,10 +5,9 @@ import '../screens/category_meals_screen.dart';
 class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
-  final String imageUrl;
   final Color color;
 
-  CategoryItem(this.id, this.title, this.color, this.imageUrl);
+  CategoryItem(this.id, this.title, this.color,);
 
   void selectCategory(BuildContext ctx) {
     //goes to the page that has the /
@@ -17,7 +16,6 @@ class CategoryItem extends StatelessWidget {
       arguments: {
         'id': id,
         'title': title,
-        'image': imageUrl,
       },
     );
   }
@@ -41,14 +39,13 @@ class CategoryItem extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Column(
-            children: <Widget>[
+          child:
               Text(
                 title,
                 style: Theme.of(context).textTheme.title,
               ),
-                ],
-          )),
+                
+          ),
     );
   }
 }

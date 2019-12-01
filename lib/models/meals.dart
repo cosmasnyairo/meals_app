@@ -18,7 +18,7 @@ class Meals {
   final String imageUrl;
   final List<String> ingredients;
   final List<String> steps;
-  final int duration;
+  final String duration;
   final Complexity complexity;
   final Affordability affordability;
 

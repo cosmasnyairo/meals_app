@@ -14,8 +14,8 @@ class CategoriesScreen extends StatelessWidget {
       body: GridView(
         padding: const EdgeInsets.all(15),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 400,  //change to 400 for it to be better
-          childAspectRatio: 7 / 3,    //change to 7/3
+          maxCrossAxisExtent: 200,  //change to 400 for it to be better
+          childAspectRatio: 2 / 2,    //change to 7/3
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
         ),
@@ -27,7 +27,6 @@ class CategoriesScreen extends StatelessWidget {
                 catData.id,
                 catData.title,
                 catData.color,
-                catData.imageUrl,
               ),
             )
             .toList(),
