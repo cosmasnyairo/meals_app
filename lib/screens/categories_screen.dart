@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import '../widgets/category_item.dart';
 import '../dummy_data.dart';
@@ -7,11 +6,7 @@ import '../dummy_data.dart';
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kenya Meals'),
-      ),
-      body: GridView(
+    return GridView(
         padding: const EdgeInsets.all(15),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,  //change to 400 for it to be better
@@ -31,19 +26,7 @@ class CategoriesScreen extends StatelessWidget {
             )
             .toList(),
         //maps it into a list
-      ),
-      // bottomNavigationBar: CurvedNavigationBar(
-      //   color: Theme.of(context).primaryColor,
-      //   backgroundColor: null,
-      //   height: 60,
-      //   items: <Widget>[
-      //     Icon(Icons.menu, size: 30),
-      //     Icon(Icons.star, size: 30),
-      //     Icon(Icons.settings, size: 30),
-      //   ],
-      //   animationCurve: Curves.easeIn,
-      //   animationDuration: Duration(milliseconds: 600),
-      // ),
+      
     );
   }
 }
