@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../widgets/drawer.dart';
 import './categories_screen.dart';
 import './favourites_screen.dart';
 
@@ -8,9 +10,16 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  final List<Widget> _pages = [
-    CategoriesScreen(),
-    FavouritesScreen(),
+  final List<Map<String, Object>> _pages = [
+    {
+      'page': CategoriesScreen(),
+      'title': 'Kenyan Meals',
+    },
+    {
+      'page': FavouritesScreen(),
+      'title': 'Favourite Meals',
+    },
+    //{'page':SettingsScreen(), 'title':'Settings'}
   ];
 
   int _selectedPageIndex = 0;
@@ -25,17 +34,16 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          alignment: Alignment.center,
-          child: const Text(
-            'Kenya Meals',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
+        title: Text(
+          _pages[_selectedPageIndex]['title'],
+          style: TextStyle(color: Colors.black),
         ),
       ),
-      body: _pages[_selectedPageIndex],
+      drawer: Drawer(
+        child: MainDrawer(),
+        elevation: 1,
+      ),
+      body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
@@ -43,24 +51,18 @@ class _TabsScreenState extends State<TabsScreen> {
         items: [
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
-            icon: Icon(
-              Icons.fastfood,
-              color: Theme.of(context).accentColor,
-            ),
+            icon: Icon(Icons.fastfood, color: Theme.of(context).accentColor),
             title: Text('Categories'),
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
-            icon: Icon(
-              Icons.favorite,
-              color: Theme.of(context).accentColor,
-            ),
+            icon: Icon(Icons.favorite, color: Theme.of(context).accentColor),
             title: Text('Favourites'),
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.settings, color: Theme.of(context).accentColor),
-            title: Text('Settings'),
+            title: Text('Filter'),
           ),
         ],
       ),
