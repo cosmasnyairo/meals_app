@@ -19,7 +19,6 @@ class _TabsScreenState extends State<TabsScreen> {
       'page': FavouritesScreen(),
       'title': 'Favourite Meals',
     },
-    //{'page':SettingsScreen(), 'title':'Settings'}
   ];
 
   int _selectedPageIndex = 0;
@@ -59,11 +58,7 @@ class _TabsScreenState extends State<TabsScreen> {
             icon: Icon(Icons.favorite, color: Theme.of(context).accentColor),
             title: Text('Favourites'),
           ),
-          BottomNavigationBarItem(
-            backgroundColor: Theme.of(context).primaryColor,
-            icon: Icon(Icons.settings, color: Theme.of(context).accentColor),
-            title: Text('Filter'),
-          ),
+          
         ],
       ),
     );
