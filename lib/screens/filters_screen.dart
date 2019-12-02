@@ -12,6 +12,20 @@ class _FilterScreenState extends State<FilterScreen> {
   var _Vegetarian = true;
   var _LactoseFree = false;
 
+  Widget _buildSwitchListTile(
+    String title,
+    String description,
+    bool currentValue,
+    Function updateValue,
+  ) {
+    return SwitchListTile(
+      title: Text(title),
+      subtitle: Text(description),
+      onChanged: updateValue,
+      value: currentValue,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,21 +43,51 @@ class _FilterScreenState extends State<FilterScreen> {
             alignment: Alignment.center,
             padding: EdgeInsets.all(20),
             child: Text('Adjust The Meal Selection',
-            style: Theme.of(context).textTheme.body1),
+                style: Theme.of(context).textTheme.body1),
           ),
           Expanded(
             child: ListView(
               children: <Widget>[
-                SwitchListTile(
-                  title: Text('Gluten Free'),
-                  value: _GlutenFree,
-                  subtitle: Text('Only Gluten Free Meals'),
-                  onChanged: (newvalue){
+                _buildSwitchListTile(
+                  'Gluten Free',
+                  'Only Gluten Free Meals.',
+                  _GlutenFree,
+                  (updateValue){
                     setState(() {
-                      _GlutenFree=newvalue;
+                      _GlutenFree =updateValue;
                     });
-                  },
-                )
+                  }
+                ),
+                _buildSwitchListTile(
+                  'Lactose Free',
+                  'Only Lactose Free Meals.',
+                  _LactoseFree,
+                  (updateValue){
+                    setState(() {
+                      _LactoseFree =updateValue;
+                    });
+                  }
+                ),
+                _buildSwitchListTile(
+                  'Vegeterian',
+                  'Only Vegeterian Meals.',
+                  _Vegetarian,
+                  (updateValue){
+                    setState(() {
+                      _Vegetarian =updateValue;
+                    });
+                  }
+                ),
+                _buildSwitchListTile(
+                  'Vegan',
+                  'Only Vegan Meals.',
+                   _Vegan,
+                  (updateValue){
+                    setState(() {
+                      _Vegan =updateValue;
+                    });
+                  }
+                ),
               ],
             ),
           )
