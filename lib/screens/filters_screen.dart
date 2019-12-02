@@ -43,7 +43,7 @@ class _FilterScreenState extends State<FilterScreen> {
             alignment: Alignment.center,
             padding: EdgeInsets.all(20),
             child: Text('Adjust The Meal Selection',
-                style: Theme.of(context).textTheme.body1),
+                style: Theme.of(context).textTheme.body2),
           ),
           Expanded(
             child: ListView(

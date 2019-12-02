@@ -7,8 +7,19 @@ import './screens/tabs_screen.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Map<String, bool> _filters = {
+    'gluten': false,
+    'lactose': false,
+    'vegeterian': false,
+    'vegan': false,
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,11 +32,11 @@ class MyApp extends StatelessWidget {
         textTheme: ThemeData.light().textTheme.copyWith(
             body1: TextStyle(
               color: Color.fromRGBO(20, 51, 51, 1),
-              fontSize: 22,
-              fontFamily: 'Raleway',
             ),
             body2: TextStyle(
               color: Color.fromRGBO(20, 51, 51, 1),
+              fontSize: 22,
+              fontFamily: 'Raleway',
             ),
             title: TextStyle(
               fontSize: 22,
@@ -42,7 +53,7 @@ class MyApp extends StatelessWidget {
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
-          builder: (ctx) => CategoryMealsScreen(),
+          builder: (ctx) => TabsScreen(),
         );
       },
     );
