@@ -38,7 +38,7 @@ class MealDetailsScreen extends StatelessWidget {
         title: Text('${selectedMeal.title}'),
       ),
       body: SingleChildScrollView(
-              child: Column(
+        child: Column(
           children: <Widget>[
             Container(
               height: 250,
@@ -88,10 +88,18 @@ class MealDetailsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50 ,
+              height: 50,
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        child: Icon(Icons.delete),
+        tooltip: 'Delete Temporarily',        
+        onPressed: (){
+          Navigator.of(context).pop(mealId); 
+        },
       ),
     );
   }

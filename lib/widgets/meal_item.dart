@@ -9,7 +9,7 @@ class MealItem extends StatelessWidget {
   final String duration;
   final Complexity complexity;
   final Affordability affordability;
-
+  final Function removeItem;
   MealItem({
     //we use this format if we don't want to remember the exact position of these in the ecode
     @required this.id,
@@ -18,6 +18,7 @@ class MealItem extends StatelessWidget {
     @required this.complexity,
     @required this.duration,
     @required this.imageUrl,
+    @required this.removeItem,
   });
 
   String get complexityText {
@@ -35,7 +36,8 @@ class MealItem extends StatelessWidget {
         return 'Unknown';
     }
   }
-  String get affordabilityText{
+
+  String get affordabilityText {
     switch (affordability) {
       case Affordability.Affordable:
         return 'Affordable';
@@ -52,11 +54,18 @@ class MealItem extends StatelessWidget {
   }
 
   void selectMeal(BuildContext ctx) {
-     Navigator.of(ctx).pushNamed(
+    Navigator.of(ctx)
+        .pushNamed(
       '/meal-details',
       arguments: id,
-         );
+    )
+        .then((result) {
+      if (result != null) {
+        removeItem(result);
+      }
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -101,7 +110,7 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(15),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround  ,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
@@ -118,7 +127,7 @@ class MealItem extends StatelessWidget {
                       SizedBox(
                         width: 4,
                       ),
-                      Text(complexityText+' To Make'),
+                      Text(complexityText + ' To Make'),
                     ],
                   ),
                   Row(
