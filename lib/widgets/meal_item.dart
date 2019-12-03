@@ -9,7 +9,6 @@ class MealItem extends StatelessWidget {
   final String duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
   MealItem({
     //we use this format if we don't want to remember the exact position of these in the ecode
     @required this.id,
@@ -18,7 +17,6 @@ class MealItem extends StatelessWidget {
     @required this.complexity,
     @required this.duration,
     @required this.imageUrl,
-    @required this.removeItem,
   });
 
   String get complexityText {
@@ -61,7 +59,7 @@ class MealItem extends StatelessWidget {
     )
         .then((result) {
       if (result != null) {
-        removeItem(result);
+        //  
       }
     });
   }

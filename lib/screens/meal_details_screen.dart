@@ -4,9 +4,9 @@ import 'package:meals_app/models/meals.dart';
 import '../dummy_data.dart';
 
 class MealDetailsScreen extends StatelessWidget {
-final Function toggleFavourite;
-final Function _isMealFavourite;
-MealDetailsScreen(this.toggleFavourite, this._isMealFavourite);
+  final Function toggleFavourite;
+  final Function _isMealFavourite;
+  MealDetailsScreen(this.toggleFavourite, this._isMealFavourite);
 
   Widget buildSectionTitle(BuildContext ctx, String text) {
     return Container(
@@ -99,8 +99,10 @@ MealDetailsScreen(this.toggleFavourite, this._isMealFavourite);
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
-        child: Icon(Icons.favorite),        
-        onPressed: toggleFavourite,
+        child: Icon(
+          _isMealFavourite(mealId) ? Icons.favorite : Icons.favorite_border,
+        ),
+        onPressed: ()=>toggleFavourite(mealId ),
       ),
     );
   }
