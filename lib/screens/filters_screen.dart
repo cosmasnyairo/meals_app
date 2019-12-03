@@ -103,6 +103,10 @@ class _FilterScreenState extends State<FilterScreen> {
                     _Vegan = updateValue;
                   });
                 }),
+                Container(
+                  width: 10,
+                  alignment: Alignment.center,
+                  child:
                 RaisedButton(
                   child: Text('Save'),
                   padding: EdgeInsets.all(10),
@@ -117,7 +121,8 @@ class _FilterScreenState extends State<FilterScreen> {
                     };
                     widget.saveFilters(selectedFilters);
                   },
-                )
+              ),
+                ),
               ],
              ),
           ),
